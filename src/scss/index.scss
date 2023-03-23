@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+@import "./cdn";
+@import "./variables";
+@import "./mixin";
+@import "./header.scss";
+@import "./main.scss";
+
+
+
+main{
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: auto;
+    position: relative;
+    z-index: 50;
+}

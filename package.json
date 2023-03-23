@@ -1,0 +1,27 @@
+{
+  "name": "bolynskii-ewgenii-kursach-1",
+  "version": "1.0.0",
+  "description": "",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "source": "src/index.html",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrEwgenius/Bolynskii-Ewgenii-kursach-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrEwgenius/Bolynskii-Ewgenii-kursach-1/issues"
+  },
+  "homepage": "https://github.com/MrEwgenius/Bolynskii-Ewgenii-kursach-1#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "parcel": "^2.8.3",
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.59.3"
+  }
+}
