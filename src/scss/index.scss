@@ -12,10 +12,13 @@
 @import "./header.scss";
 @import "./main.scss";
 
-
-
-main{
-    padding: 20px 0;
+.none {
+    display: none;
+}
+header{
+    padding-bottom: 20px;
+}
+main {
 }
 
 .container {
@@ -24,4 +27,24 @@ main{
     margin: auto;
     position: relative;
     z-index: 50;
+}
+
+*i {
+    cursor: pointer;
+}
+button {
+    cursor: pointer;
+    border: none;
+}
+textarea,
+input {
+    resize: none;
+    border: 2px solid rgb(49, 167, 175);
+    outline: none;
+    display: block;
+    padding: 5px;
+}
+
+output {
+    display: block;
 }

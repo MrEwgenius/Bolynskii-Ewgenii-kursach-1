@@ -12,23 +12,24 @@
 .column-make-todo {
     display: flex;
     justify-content: space-between;
-    // background-color: rgb(235, 216, 194);
     margin-bottom: 20px;
     padding: 15px;
     border-radius: 10px;
-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.22);
+    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.22);
 }
 .fa-solid {
+    color: aqua;
+    font-size: 30px;
 }
+
 .fa-plus {
     color: rgb(5, 48, 240);
     font-size: 20px;
-
 }
 .fa-sharp {
     color: rgb(253, 142, 6);
     font-size: 20px;
-    margin-left: 10px;
+    // margin-left: 10px;
 }
 .fa-trash {
 }
@@ -38,11 +39,191 @@ box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.22);
     display: flex;
     justify-content: space-between;
     padding: 10px;
-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.22);
+    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.22);
 }
 .column-list {
-
     border-radius: 10px;
     padding: 10px;
-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.22);
+    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.22);
+}
+
+.popup {
+    background-color: #000000c2;
+    height: 100vh;
+    position: absolute;
+    top: -10000px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 99;
+    transition: all 0.5s;
+}
+.popup-active {
+    top: 0px;
+}
+.form {
+    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.22);
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 20px;
+    width: 70%;
+    margin: auto;
+}
+.form-title {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3 {
+        font-size: 50px;
+        color: #fd8f00;
+    }
+    margin-bottom: 50px;
+    &::after {
+        position: absolute;
+        content: "";
+        top: 120%;
+        height: 2px;
+        width: 100%;
+        background-color: #fd8f00;
+    }
+}
+.form-input-title {
+    margin-bottom: 40px;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.form-description {
+    border-radius: 10px;
+    font-size: 20px;
+    margin-bottom: 40px;
+    width: 100%;
+    min-height: 100px;
+}
+.form-author {
+    border-radius: 10px;
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.form-input--name {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.form-buttons {
+    text-align: right;
+}
+.form-button {
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    color: #fff;
+}
+.form-create {
+    background-color: #05b2f7;
+}
+.form-cancel {
+    background-color: #f3970c;
+}
+
+.column-list-out {
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    background-color: #eeeac2a6;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.22);
+}
+.column-list--title {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        display: block;
+        top: 100%;
+        width: 100%;
+        height: 1px;
+        background-color: #00000080;
+    }
+    span {
+        font-size: 20px;
+    }
+    p {
+        font-size: 20px;
+    }
+}
+.column-description {
+    position: relative;
+    margin-bottom: 30px;
+}
+.column-description--title {
+    margin-bottom: 10px;
+
+    font-size: 25px;
+    font-weight: 700;
+}
+.column-description--desc {
+    font-size: 18px;
+}
+.column-author--main {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        .inprogress{
+            text-transform: uppercase;
+            background-color: #00ffff;
+            border-radius: 10px;
+            padding: 5px;
+            border: 1px solid rgb(255, 153, 0);
+        }
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: -15px;
+        width: 100%;
+        height: 1px;
+        background-color: #00000080;
+    }
+}
+.column-author {
+    color: #05b2f7;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.delete-task--card {
+    
+}
+.fa-sharp {
+}
+.fa-solid {
+}
+.fa-trash {
+}
+
+.inprogress{
+
+}
+.indone{
+    text-transform: uppercase;
+    background-color: #07bd10;
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid rgb(0, 195, 255);
 }
