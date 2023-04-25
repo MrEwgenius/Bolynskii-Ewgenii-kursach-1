@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="">
         <div class="container">
             <div class="header-wrap ">
                 <div class="header-logo">
@@ -33,32 +33,30 @@
                         </div>
                     </div>
                     <div class="column-total">
-                        <p>Total:</p>
+                        <span>Total:</span>
                         <p class="total-make-todo">0</p>
                     </div>
-                    <div class="column-list">
-                        <ul class="column-list--maketodo">
-                            <!-- <li class="column-list-out">
-                                <div class="column-list--title">
-                                    <span>ToDo</span>
-                                    <p>Data</p>
-                                </div>
-                                <div class="column-description">
-                                    <output class="column-description--title">Заголовок 1</output>
-                                    <output class="column-description--desc">Description</output>
-                                </div>
-                                <div class="column-author--main">
-                                    <output class="column-author">Author</output>
-                                    <div>
-                                        <button class="inprogress">IN PROGRESS</button>
-                                        <a class="delete-task--card"><i class="fa-sharp fa-solid fa-trash"></i></a>
-                                    </div>
+                    <ul class="column-list column-list--maketodo">
+                        <!-- <li class="column-list-out">
+                                        <div class="column-list--title">
+                                            <span>ToDo</span>
+                                            <p>Data</p>
+                                        </div>
+                                        <div class="column-description">
+                                            <output class="column-description--title">Заголовок 1</output>
+                                            <output class="column-description--desc">Description</output>
+                                        </div>
+                                        <div class="column-author--main">
+                                            <output class="column-author">Author</output>
+                                            <div>
+                                                <button class="inprogress">IN PROGRESS</button>
+                                                <a class="delete-task--card"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                                            </div>
 
 
-                                </div>
-                            </li> -->
-                        </ul>
-                    </div>
+                                        </div>
+                                    </li> -->
+                    </ul>
                 </div>
                 <div class="main-columns">
                     <div class="column-make-todo">
@@ -68,72 +66,84 @@
                         </div>
                     </div>
                     <div class="column-total">
-                        <p>Total:</p>
+                        <span>Total:</span>
                         <p class="total-progress">0</p>
                     </div>
-
-                    <div class="column-list">
-                        <ul class="column-list--in-progress">
-                            <!-- <li class="column-list-out">
-                                <div class="column-list--title">
-                                    <span>ToDo</span>
-                                    <p>Data</p>
+                    <ul class="column-list column-list--in-progress">
+                        <!-- <li class="column-list-out" data-taskid="0">
+                            <div class="column-list--title">
+                                <span>ToDo</span>
+                                <div class="maketodo--data">07.04.2023, 16:16:02</div>
+                            </div>
+                            <div class="column-description">
+                                <output class="column-description--title">1</output>
+                                <output class="column-description--desc"></output>
+                            </div>
+                            <div class="column-author--main">
+                                <output class="column-author">2</output>
+                                <div>
+                                    <button class="indone">IN DONE</button>
+                                    <a class="delete-task--card__inprogress"><i
+                                            class="fa-sharp fa-solid fa-trash"></i></a>
                                 </div>
-                                <div class="column-description">
-                                    <output class="column-description--title">Заголовок 1</output>
-                                    <output class="column-description--desc">Description</output>
-                                </div>
-                                <div class="column-author--main">
-                                    <output class="column-author">Author</output>
-                                    <div>
-                                        <button class="indone">IN DONE</button>
-                                        <a class="delete-task--card"><i class="fa-sharp fa-solid fa-trash"></i></a>
-                                    </div>
-
-
-                                </div>
-                            </li> -->
-                        </ul>
-                    </div>
-
+                            </div>
+                        </li> -->
+                    </ul>
                 </div>
                 <div class="main-columns">
                     <div class="column-make-todo">
                         <h3>Done</h3>
                         <div>
-                            <a class="delete-task"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                            <a class="delete-task--done"><i class="fa-sharp fa-solid fa-trash"></i></a>
 
                         </div>
                     </div>
                     <div class="column-total">
-                        <p>Total:</p>
+                        <span>Total:</span>
                         <p class="total-done">0</p>
                     </div>
-                    <div class="column-list">
-                        <ul class="column-list--main">
-                        </ul>
-                    </div>
+                    <ul class="column-list column-list--done">
+                        <!-- <li class="column-list-out">
+                                        <div class="column-list--title">
+                                            <span>ToDo</span>
+                                            <p>Data</p>
+                                        </div>
+                                        <div class="column-description">
+                                            <output class="column-description--title">Заголовок 1</output>
+                                            <output class="column-description--desc">Description</output>
+                                        </div>
+                                        <div class="column-author--main">
+                                            <output class="column-author">Author</output>
+                                            <div>
+                                                <a class="delete-task--card"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </li> -->
+                    </ul>
                 </div>
-
             </div>
         </div>
         <div class="popup ">
-            <form class="form" action="">
+            <form class="form" id="form" action="#" autocomplete="off">
                 <div class="form-title">
                     <h3>Нужно ввести что-то</h3>
                     <i class="fa-solid fa-circle-xmark"></i>
                 </div>
 
-                <div>
-                    <p class="form-input--name">Title:</p>
-                    <input class="form-input-title" type="text" id="">
+                <div class="form-content">
+                    <label for="input-title" class="form-label--name">Title:</label>
+                    <input class="form-input-title outs" placeholder="Название задачи" id="input-title" type="text">
+                    <label class="error-lable">Error</label>
                 </div>
-                <div>
-                    <p class="form-input--name">Description:</p>
-                    <textarea class="form-description"></textarea>
+                <div class="form-content">
+                    <label for="textarea-description" class="form-label--name">Description:</label>
+                    <textarea class="form-description outs" placeholder="Описание" id="textarea-description"></textarea>
+                    <label class="error-lable">Error</label>
                 </div>
-                <div>
-                    <input class="form-author" placeholder="Автор" type="text" id="">
+                <div class="form-content">
+                    <label for="form-author" class="form-label--name">Author:</label>
+                    <input class="form-author outs" placeholder="Автор" id="form-author" type="text">
+                    <label class="error-lable">Error</label>
                 </div>
 
                 <div class="form-buttons">
@@ -145,7 +155,8 @@
     </main>
 
 
-    <script type="module" src="./js/idexes.js"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <script type="module" src="./js/index.js"></script>
 </body>
 
 </html>

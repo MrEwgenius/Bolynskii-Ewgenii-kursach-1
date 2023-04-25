@@ -1,50 +1,73 @@
 .main-wrap {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    @include df_jc-sb_fw;
     gap: 20px;
+
+    .main-columns {
+        width: 350px;
+        @media (max-width: 760px) {
+            width: 80%;
+        }
+        @media (max-width: 600px) {
+            width: 90%;
+        }
+        @media (max-width: 500px) {
+            width: 100%;
+        }
+
+        .column-make-todo {
+            @include df_jc-sb_fw;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.22);
+
+            div {
+                @include df_jc-sb_fw;
+                gap: 10px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+        }
+
+        .column-total {
+            @include df_jc-sb_fw;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            align-items: center;
+            padding: 10px;
+            box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.22);
+            span {
+                font-size: 15px;
+            }
+        }
+
+        .column-list {
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.22);
+        }
+    }
+    @media (max-width: 1120px) {
+        justify-content: space-around;
+        gap: 30px;
+    }
 }
-.main-columns {
-    display: flex;
-    flex-direction: column;
-    width: 350px;
-}
-.column-make-todo {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.22);
-}
+
 .fa-solid {
-    color: aqua;
-    font-size: 30px;
+    color: $form-title-text;
+    font-size: 25px;
 }
 
 .fa-plus {
-    color: rgb(5, 48, 240);
-    font-size: 20px;
+    color: $fa-plus;
+    font-size: 25px;
 }
 .fa-sharp {
-    color: rgb(253, 142, 6);
-    font-size: 20px;
-    // margin-left: 10px;
-}
-.fa-trash {
-}
-.column-total {
-    border-radius: 10px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.22);
-}
-.column-list {
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.22);
+    color: $fa-sharp;
+    font-size: 25px;
 }
 
 .popup {
@@ -57,6 +80,8 @@
     width: 100%;
     z-index: 99;
     transition: all 0.5s;
+    @media (max-width: 768px) {
+    }
 }
 .popup-active {
     top: 0px;
@@ -64,166 +89,219 @@
 .form {
     box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.22);
     border-radius: 20px;
-    background-color: #fff;
+    background-color: $white;
     padding: 20px;
     width: 70%;
     margin: auto;
-}
-.form-title {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    h3 {
-        font-size: 50px;
-        color: #fd8f00;
+    @media (max-width: 1100px) {
+        width: 90%;
     }
-    margin-bottom: 50px;
-    &::after {
-        position: absolute;
-        content: "";
-        top: 120%;
-        height: 2px;
+    .form-title {
+        position: relative;
+        @include df_jc-sb_fw;
+        align-items: center;
+        margin-bottom: 50px;
+        @media (max-width: 500px) {
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            font-size: 50px;
+            color: $form-title-text;
+            @media (max-width: 900px) {
+                font-size: 45px;
+            }
+            @media (max-width: 600px) {
+                font-size: 35px;
+            }
+            @media (max-width: 500px) {
+                font-size: 25px;
+            }
+            @media (max-width: 400px) {
+                font-size: 20px;
+            }
+        }
+        &::after {
+            position: absolute;
+            content: "";
+            top: 120%;
+            height: 2px;
+            width: 100%;
+            background-color: $form-title-text;
+        }
+        .fa-circle-xmark {
+            @media (max-width: 500px) {
+                font-size: 25px;
+            }
+        }
+    }
+    .form-content {
+        margin-bottom: 40px;
+        @media (max-width: 500px) {
+            margin-bottom: 20px;
+        }
+        @media (max-width: 430px) {
+            margin-bottom: 47px;
+        }
+    }
+    input {
+        border-radius: 10px;
         width: 100%;
-        background-color: #fd8f00;
+        font-size: 20px;
     }
-}
-.form-input-title {
-    margin-bottom: 40px;
-    width: 100%;
-    font-size: 20px;
-    border-radius: 10px;
-}
-.form-description {
-    border-radius: 10px;
-    font-size: 20px;
-    margin-bottom: 40px;
-    width: 100%;
-    min-height: 100px;
-}
-.form-author {
-    border-radius: 10px;
-    width: 100%;
-    font-size: 20px;
-    margin-bottom: 40px;
-}
+    textarea {
+        border-radius: 10px;
+        font-size: 20px;
+        width: 100%;
+        min-height: 100px;
+    }
 
-.form-input--name {
-    font-size: 40px;
-    margin-bottom: 20px;
-}
+    .form-label--name {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 40px;
+        line-height: 40px;
+        @media (max-width: 500px) {
+            font-size: 30px;
+            margin-bottom: 0px;
+            line-height: 30px;
+        }
+    }
 
-.form-buttons {
-    text-align: right;
-}
-.form-button {
-    width: 150px;
-    height: 40px;
-    font-size: 20px;
-    border-radius: 20px;
-    border: 1px solid transparent;
-    color: #fff;
-}
-.form-create {
-    background-color: #05b2f7;
-}
-.form-cancel {
-    background-color: #f3970c;
+    .form-buttons {
+        text-align: right;
+        @media (max-width: 500px) {
+            @include df_jc-sb_fw;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+        }
+
+        .form-button {
+            width: 150px;
+            height: 40px;
+            font-size: 25px;
+            border-radius: 20px;
+            border: 1px solid rgb(145, 143, 143);
+            color: $white;
+        }
+
+        .form-create {
+            background-color: $form-create-btn;
+        }
+
+        .form-cancel {
+            background-color: $form-title-text;
+        }
+    }
 }
 
 .column-list-out {
     &:not(:last-child) {
         margin-bottom: 20px;
     }
-    background-color: #eeeac2a6;
+
+    background-color: $card-color;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.22);
-}
-.column-list--title {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        display: block;
-        top: 100%;
-        width: 100%;
-        height: 1px;
-        background-color: #00000080;
-    }
-    span {
-        font-size: 20px;
-    }
-    p {
-        font-size: 20px;
-    }
-}
-.column-description {
-    position: relative;
-    margin-bottom: 30px;
-}
-.column-description--title {
-    margin-bottom: 10px;
 
-    font-size: 25px;
-    font-weight: 700;
-}
-.column-description--desc {
-    font-size: 18px;
-}
-.column-author--main {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    div{
-        display: flex;
-        justify-content: space-between;
+    .column-list--title {
+        position: relative;
+        @include df_jc-sb_fw;
         align-items: center;
-        gap: 10px;
-        .inprogress{
-            text-transform: uppercase;
-            background-color: #00ffff;
-            border-radius: 10px;
-            padding: 5px;
-            border: 1px solid rgb(255, 153, 0);
+        margin-bottom: 10px;
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            display: block;
+            top: 100%;
+            width: 100%;
+            height: 1px;
+            background-color: $black;
+        }
+
+        span {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 20px;
         }
     }
-    &::after {
-        content: "";
-        position: absolute;
-        top: -15px;
-        width: 100%;
-        height: 1px;
-        background-color: #00000080;
+
+    .column-description {
+        position: relative;
+        margin-bottom: 30px;
+        overflow: hidden;
+
+        .column-description--title {
+            margin-bottom: 10px;
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .column-description--desc {
+            font-size: 18px;
+        }
+    }
+    .column-author--main {
+        position: relative;
+        @include df_jc-sb_fw;
+        align-items: center;
+        &::after {
+            content: "";
+            position: absolute;
+            top: -15px;
+            width: 100%;
+            height: 1px;
+            background-color: #00000080;
+        }
+        .column-author {
+            color: $author-color;
+            font-size: 15px;
+            text-transform: capitalize;
+        }
+
+        div {
+            @include df_jc-sb_fw;
+            align-items: center;
+            gap: 10px;
+
+            .inprogress,
+            .indone,
+            .inmaketodo {
+                border-radius: 10px;
+                padding: 5px;
+                border: 1px solid $white;
+                font-size: 22px;
+            }
+            .inprogress,
+            .inmaketodo {
+                background-color: $in-progres-btns;
+            }
+            .indone {
+                background-color: $in-done-btns;
+            }
+        }
     }
 }
-.column-author {
-    color: #05b2f7;
-    font-size: 20px;
-    text-transform: capitalize;
-}
-.delete-task--card {
-    
-}
-.fa-sharp {
-}
-.fa-solid {
-}
-.fa-trash {
+
+.noscroll {
+    height: 100%;
+    overflow: hidden;
 }
 
-.inprogress{
-
+.error .outs {
+    border: 2px solid red;
 }
-.indone{
-    text-transform: uppercase;
-    background-color: #07bd10;
-    border-radius: 10px;
-    padding: 5px;
-    border: 1px solid rgb(0, 195, 255);
+
+.error-lable {
+    opacity: 0;
+    color: red;
+    @media (max-width: 430px) {
+        font-size: 11px;
+        position: absolute;
+    }
 }

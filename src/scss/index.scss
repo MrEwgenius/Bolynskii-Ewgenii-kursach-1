@@ -12,13 +12,47 @@
 @import "./header.scss";
 @import "./main.scss";
 
+html,
+body {
+    font-family: "Alkatra", cursive;
+    font-weight: 400;
+}
+
 .none {
     display: none;
 }
-header{
+header {
     padding-bottom: 20px;
 }
-main {
+
+a {
+    display: flex;
+    justify-content: center;
+}
+
+*i {
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+textarea,
+input {
+    font-family: "Alkatra", cursive;
+    resize: none;
+    border: 2px solid rgb(49, 167, 175);
+    outline: none;
+    display: block;
+    padding: 5px;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+output {
+    display: block;
 }
 
 .container {
@@ -27,24 +61,4 @@ main {
     margin: auto;
     position: relative;
     z-index: 50;
-}
-
-*i {
-    cursor: pointer;
-}
-button {
-    cursor: pointer;
-    border: none;
-}
-textarea,
-input {
-    resize: none;
-    border: 2px solid rgb(49, 167, 175);
-    outline: none;
-    display: block;
-    padding: 5px;
-}
-
-output {
-    display: block;
 }

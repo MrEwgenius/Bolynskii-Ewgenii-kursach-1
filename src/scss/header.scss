@@ -2,20 +2,36 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
     box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
     padding: 10px 0;
     .header-logo {
         p {
             font-size: 30px;
-            color: rgb(255, 153, 0);
+            color: $form-title-text;
+            @media (max-width: 640px) {
+                font-size: 25px;
+            }
         }
     }
     .header-title {
         font-size: 30px;
-        color: aqua;
+        color: $form-title-text;
         text-transform: capitalize;
+        @media (max-width: 640px) {
+            font-size: 25px;
+        }
     }
     .header-data {
-        font-size: 40px;
+        font-size: 30px;
+        color: $form-title-text;
+        @media (max-width: 640px) {
+            font-size: 25px;
+        }
+    }
+    @media (max-width: 640px) {
+        display: block;
+        text-align: center;
     }
 }
